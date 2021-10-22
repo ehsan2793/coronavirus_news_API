@@ -46,10 +46,6 @@ const newsPapers = [
         address: 'https://nypost.com/coronavirus/',
         base: 'https://nypost.com'
     },
-
-
-
-
     {
         name: 'chicagotribune',
         address: 'https://www.chicagotribune.com/coronavirus/',
@@ -115,13 +111,14 @@ newsPapers.forEach((newsPaper) => {
 server.get('/', (req, res) => {
     res.status(200).json('Welcome to Coronavirus News API');
 });
-server.get('/news', (req, res) => {
-    res.json(news);
+server.get('/news', async (req, res) => {
+    const result = await news
+    res.json(result);
 });
 
 server.get('/news/:newsPaperId', async (req, res) => {
     const id = req.params.newsPaperId
-    const address = newsPapers.filter(newspaper => newspaper.name === id)[0].address
+    const address = await newsPapers.filter(newspaper => newspaper.name === id)[0].address
 
     axios.get(address)
         .then(response => {
