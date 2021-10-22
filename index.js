@@ -93,9 +93,6 @@ const newsPapers = [
 
 ];
 
-
-
-
 const news = [];
 
 newsPapers.forEach((newsPaper) => {
