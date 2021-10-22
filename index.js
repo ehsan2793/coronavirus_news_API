@@ -4,7 +4,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require('cors');
 const helmet = require('helmet');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 const server = express();
 server.use(cors());
