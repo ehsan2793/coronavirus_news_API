@@ -1,9 +1,10 @@
+require('dotenv').config()
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require('cors');
 const helmet = require('helmet');
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const server = express();
 server.use(cors());
