@@ -132,7 +132,6 @@ server.get('/news/:newsPaperId', async (req, res) => {
                     source: id,
                     title,
                     url,
-
                 });
             });
             res.status(200).json(specificNews);
